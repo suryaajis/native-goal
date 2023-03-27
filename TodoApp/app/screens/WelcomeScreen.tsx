@@ -12,8 +12,9 @@ import { colors, spacing } from "../theme"
 import { useHeader } from "../utils/useHeader" // @demo remove-current-line
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
 
-const welcomeLogo = require("../../assets/images/logo.png")
+const welcomeLogo = require("../../assets/images/goals.png")
 const welcomeFace = require("../../assets/images/welcome-face.png")
+const todoIcon = require("../../assets/icons/check-sign.png")
 
 interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
 
@@ -27,7 +28,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
   } = useStores()
 
   function goNext() {
-    navigation.navigate("Demo", { screen: "DemoShowroom" })
+    navigation.navigate("Dashboard", { screen: "DemoShowroom" })
   }
 
   useHeader({
@@ -45,15 +46,15 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         <Text
           testID="welcome-heading"
           style={$welcomeHeading}
-          tx="welcomeScreen.readyForLaunch"
+          tx="welcomeScreen.greetingApp"
           preset="heading"
         />
-        <Text tx="welcomeScreen.exciting" preset="subheading" />
-        <Image style={$welcomeFace} source={welcomeFace} resizeMode="contain" />
+        <Text tx="welcomeScreen.subGreetingApp" preset="subheading" />
+        {/* <Image style={$welcomeFace} source={todoIcon} resizeMode="contain" /> */}
       </View>
 
       <View style={[$bottomContainer, $bottomContainerInsets]}>
-        <Text tx="welcomeScreen.postscript" size="md" />
+        <Text tx="welcomeScreen.appScript" size="md" />
         {/* @demo remove-block-start */}
         <Button
           testID="next-screen-button"
@@ -91,20 +92,20 @@ const $bottomContainer: ViewStyle = {
   justifyContent: "space-around",
 }
 const $welcomeLogo: ImageStyle = {
-  height: 88,
+  height: 200,
   width: "100%",
-  marginBottom: spacing.huge,
+  // marginBottom: spacing.huge,
 }
 
 const $welcomeFace: ImageStyle = {
-  height: 169,
-  width: 269,
+  height: 69,
+  width: 169,
   position: "absolute",
-  bottom: -47,
-  right: -80,
+  bottom: 20,
+  right: -30,
   transform: [{ scaleX: isRTL ? -1 : 1 }],
 }
 
 const $welcomeHeading: TextStyle = {
-  marginBottom: spacing.medium,
+  marginBottom: spacing.small,
 }

@@ -26,7 +26,7 @@
         "backgroundImage": "./assets/images/app-icon-android-adaptive-background.png"
       },
       "splash": {
-        "image": "./assets/images/splash-logo-android-universal.png",
+        "image": "./assets/images/goals.png",
         "resizeMode": "contain",
         "backgroundColor": "#191015"
       }
@@ -36,7 +36,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.todoapp",
       "splash": {
-        "image": "./assets/images/splash-logo-ios-mobile.png",
+        "image": "./assets/images/goals.png",
         "tabletImage": "./assets/images/splash-logo-ios-tablet.png",
         "resizeMode": "contain",
         "backgroundColor": "#191015"

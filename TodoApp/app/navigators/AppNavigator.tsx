@@ -40,7 +40,7 @@ import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 export type AppStackParamList = {
   Welcome: undefined
   Login: undefined // @demo remove-current-line
-  Demo: NavigatorScreenParams<DemoTabParamList> // @demo remove-current-line
+  Dashboard: NavigatorScreenParams<DemoTabParamList> // @demo remove-current-line
   // 🔥 Your screens go here
 }
 
@@ -76,7 +76,7 @@ const AppStack = observer(function AppStack() {
           {/* @demo remove-block-end */}
           <Stack.Screen name="Welcome" component={WelcomeScreen} />
           {/* @demo remove-block-start */}
-          <Stack.Screen name="Demo" component={DemoNavigator} />
+          <Stack.Screen name="Dashboard" component={DemoNavigator} />
         </>
       ) : (
         <>

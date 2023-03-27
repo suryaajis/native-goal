@@ -11,6 +11,9 @@ const en = {
     readyForLaunch: "Your app, almost ready for launch!",
     exciting: "(ohh, this is exciting!)",
     letsGo: "Let's go!", // @demo remove-current-line
+    greetingApp: "Welcome to Native Goals",
+    subGreetingApp: "Todo List Application",
+    appScript: "This application for person who write list of tasks you need to complete or things that you want to do. Improve your productivity!! "
   },
   errorScreen: {
     title: "Something went wrong!",
@@ -98,8 +101,8 @@ const en = {
     windowsReactotronHint:
       "If this doesn't work, ensure the Reactotron desktop app is running and reload app.",
   },
-  demoPodcastListScreen: {
-    title: "React Native Radio episodes",
+  todoList: {
+    title: "Todo List",
     onlyFavorites: "Only Show Favorites",
     favoriteButton: "Favorite",
     unfavoriteButton: "Unfavorite",

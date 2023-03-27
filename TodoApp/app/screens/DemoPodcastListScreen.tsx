@@ -81,12 +81,12 @@ export const DemoPodcastListScreen: FC<DemoTabScreenProps<"DemoPodcastList">> = 
                 style={$emptyState}
                 headingTx={
                   episodeStore.favoritesOnly
-                    ? "demoPodcastListScreen.noFavoritesEmptyState.heading"
+                    ? "todoList.noFavoritesEmptyState.heading"
                     : undefined
                 }
                 contentTx={
                   episodeStore.favoritesOnly
-                    ? "demoPodcastListScreen.noFavoritesEmptyState.content"
+                    ? "todoList.noFavoritesEmptyState.content"
                     : undefined
                 }
                 button={episodeStore.favoritesOnly ? null : undefined}
@@ -98,7 +98,7 @@ export const DemoPodcastListScreen: FC<DemoTabScreenProps<"DemoPodcastList">> = 
           }
           ListHeaderComponent={
             <View style={$heading}>
-              <Text preset="heading" tx="demoPodcastListScreen.title" />
+              <Text preset="heading" tx="todoList.title" />
               {(episodeStore.favoritesOnly || episodeStore.episodesForList.length > 0) && (
                 <View style={$toggle}>
                   <Toggle
@@ -107,13 +107,19 @@ export const DemoPodcastListScreen: FC<DemoTabScreenProps<"DemoPodcastList">> = 
                       episodeStore.setProp("favoritesOnly", !episodeStore.favoritesOnly)
                     }
                     variant="switch"
-                    labelTx="demoPodcastListScreen.onlyFavorites"
+                    labelTx="todoList.onlyFavorites"
                     labelPosition="left"
                     labelStyle={$labelStyle}
-                    accessibilityLabel={translate("demoPodcastListScreen.accessibility.switch")}
+                    accessibilityLabel={translate("todoList.accessibility.switch")}
                   />
                 </View>
               )}
+              <View>
+                <Button
+                  onPress={() => console.log('add todo ')}
+                  style={{backgroundColor:'blue'}}
+                >Add Todo</Button>
+              </View>
             </View>
           }
           renderItem={({ item }) => (
@@ -178,7 +184,7 @@ const EpisodeCard = observer(function EpisodeCard({
       Platform.select<AccessibilityProps>({
         ios: {
           accessibilityLabel: episode.title,
-          accessibilityHint: translate("demoPodcastListScreen.accessibility.cardHint", {
+          accessibilityHint: translate("todoList.accessibility.cardHint", {
             action: isFavorite ? "unfavorite" : "favorite",
           }),
         },
@@ -187,7 +193,7 @@ const EpisodeCard = observer(function EpisodeCard({
           accessibilityActions: [
             {
               name: "longpress",
-              label: translate("demoPodcastListScreen.accessibility.favoriteAction"),
+              label: translate("todoList.accessibility.favoriteAction"),
             },
           ],
           onAccessibilityAction: ({ nativeEvent }) => {
@@ -270,8 +276,8 @@ const EpisodeCard = observer(function EpisodeCard({
           style={[$favoriteButton, isFavorite && $unFavoriteButton]}
           accessibilityLabel={
             isFavorite
-              ? translate("demoPodcastListScreen.accessibility.unfavoriteIcon")
-              : translate("demoPodcastListScreen.accessibility.favoriteIcon")
+              ? translate("todoList.accessibility.unfavoriteIcon")
+              : translate("todoList.accessibility.favoriteIcon")
           }
           LeftAccessory={ButtonLeftAccessory}
         >
@@ -281,8 +287,8 @@ const EpisodeCard = observer(function EpisodeCard({
             weight="medium"
             text={
               isFavorite
-                ? translate("demoPodcastListScreen.unfavoriteButton")
-                : translate("demoPodcastListScreen.favoriteButton")
+                ? translate("todoList.unfavoriteButton")
+                : translate("todoList.favoriteButton")
             }
           />
         </Button>

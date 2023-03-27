@@ -44,7 +44,7 @@ export function DemoNavigator() {
         tabBarItemStyle: $tabBarItem,
       }}
     >
-      <Tab.Screen
+      {/* <Tab.Screen
         name="DemoShowroom"
         component={DemoShowroomScreen}
         options={{
@@ -53,9 +53,9 @@ export function DemoNavigator() {
             <Icon icon="components" color={focused && colors.tint} size={30} />
           ),
         }}
-      />
+      /> */}
 
-      <Tab.Screen
+      {/* <Tab.Screen
         name="DemoCommunity"
         component={DemoCommunityScreen}
         options={{
@@ -64,7 +64,7 @@ export function DemoNavigator() {
             <Icon icon="components" color={focused && colors.tint} size={30} />
           ),
         }}
-      />
+      /> */}
 
       <Tab.Screen
         name="DemoPodcastList"
